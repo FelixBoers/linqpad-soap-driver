@@ -11,7 +11,9 @@ namespace TestWindow
 	{
 		XElement data = new XElement("blah");
 
-		public XElement DriverData
+	    public bool IsProduction { get; set; }
+
+	    public XElement DriverData
 		{
 			get { return data; }
 			set { data = value; }
