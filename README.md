@@ -4,7 +4,7 @@
 
 A SOAP service driver for LINQPad. Useful for invoking SOAP-based services with minimal pain and fuss. For the best experience, this goes especially well with the auto-complete support in [LINQPad Pro](http://www.linqpad.net/Purchase.aspx).
 
-[![Build status](https://ci.appveyor.com/api/projects/status/b3qel2k78pok0l50?svg=true)](https://ci.appveyor.com/project/flex87/linqpad-soap-driver)
+![Build status](https://ci.appveyor.com/api/projects/status/b3qel2k78pok0l50/branch/master?svg=true)
 
 ## setup
 
