@@ -1,9 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapContextDriver", "Driver\SoapContextDriver.csproj", "{981189D9-3E97-4BBA-B8FE-DAA2D605806B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Window", "Window\Window.csproj", "{A57EAD21-9C95-4B9B-9869-CDD3D260B615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapContextDriver.SampleService", "SoapContextDriver.SampleService\SoapContextDriver.SampleService.csproj", "{38D1E213-0819-45DE-B31E-F9787D76AFE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +38,18 @@ Global
 		{A57EAD21-9C95-4B9B-9869-CDD3D260B615}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{A57EAD21-9C95-4B9B-9869-CDD3D260B615}.Release|x86.ActiveCfg = Release|x86
 		{A57EAD21-9C95-4B9B-9869-CDD3D260B615}.Release|x86.Build.0 = Release|x86
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Debug|x86.Build.0 = Debug|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Release|x86.ActiveCfg = Release|Any CPU
+		{38D1E213-0819-45DE-B31E-F9787D76AFE8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

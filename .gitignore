@@ -1,18 +1,16 @@
 .DS_Store
 Thumbs.db
 
-[Oo]bj
-[Bb]in
-_ReSharper*
+[Oo]bj/
+[Bb]in/
 
 *.suo
 *.user
 *.userprefs
 *.pidb
 *.pdb
-*crunch*
 
 releases/*
 packages/*
-!packages/edge
-!packages/nuget.exe
+
+.vs/*
