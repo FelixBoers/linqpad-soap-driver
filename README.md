@@ -1,10 +1,12 @@
 # linqpad-soap-driver
 
+> This project is based on the [`linqpad-soap-driver` from dylanmei](https://github.com/dylanmei/linqpad-soap-driver). As the origin repository seems not to be maintained anymore I've implemented few more features (see list below).
+
 A SOAP service driver for LINQPad. Useful for invoking SOAP-based services with minimal pain and fuss. For the best experience, this goes especially well with the auto-complete support in [LINQPad Pro](http://www.linqpad.net/Purchase.aspx).
 
 ## setup
 
-- Download the latest version [soap-driver-1.2.2.lpx](http://dylanmei.s3.amazonaws.com/linqpad-drivers/soap-driver-1.2.2.lpx). 
+- Download the latest *.lpx (depending on your LINQPad Version) from the [release page](https://github.com/flex87/linqpad-soap-driver/releases). 
 - In LINQPad load the driver by choosing:
 
    *Add Connection*  

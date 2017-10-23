@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<DataContextDriver>
-	<MainAssembly>SoapContextDriver.dll</MainAssembly>
-	<SupportUri>https://github.com/flex87/linqpad-soap-driver</SupportUri>
-</DataContextDriver>

@@ -1,16 +1,14 @@
 .DS_Store
 Thumbs.db
 
-[Oo]bj/
-[Bb]in/
-
 *.suo
 *.user
-*.userprefs
-*.pidb
-*.pdb
+~$*
 
+obj/
+bin/
+out/
+pub/
 releases/*
 packages/*
-
 .vs/*
