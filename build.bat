@@ -31,4 +31,3 @@ ECHO Build exit with code %ERRORLEVEL%
 PAUSE
 
 :END
-PAUSE
