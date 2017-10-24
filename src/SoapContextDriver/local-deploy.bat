@@ -8,12 +8,9 @@ rem
 rem  NB: The target directory may not be correct for your computer!
 rem  You can obtain the first part of the directory by running the following query:
 rem
-rem    Path.Combine (
-rem       Environment.GetFolderPath (Environment.SpecialFolder.CommonApplicationData),
-rem       @"LINQPad\Drivers\DataContext\4.0\")   
-rem
-rem  The final part of the directory is the name of the assembly plus its public key token in brackets.
 
-xcopy /i/y header.xml "c:\ProgramData\LINQPad\Drivers\DataContext\4.0\SoapContextDriver (a2ca9cc4ad783add)\"
-xcopy /i/y SoapContextDriver.dll "c:\ProgramData\LINQPad\Drivers\DataContext\4.0\SoapContextDriver (a2ca9cc4ad783add)\"
-xcopy /i/y SoapContextDriver.pdb "c:\ProgramData\LINQPad\Drivers\DataContext\4.0\SoapContextDriver (a2ca9cc4ad783add)\"
+echo Hier bin ich: %cd%
+
+xcopy /i/y header.xml "%localappdata%\LINQPad\Drivers\DataContext\4.6\SoapContextDriver (a2ca9cc4ad783add)\"
+xcopy /i/y SoapContextDriver.dll "%localappdata%\LINQPad\Drivers\DataContext\4.6\SoapContextDriver (a2ca9cc4ad783add)\"
+xcopy /i/y SoapContextDriver.pdb "%localappdata%\LINQPad\Drivers\DataContext\4.6\SoapContextDriver (a2ca9cc4ad783add)\"
