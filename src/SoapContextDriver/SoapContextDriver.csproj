@@ -67,13 +67,9 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Services.Client" />
-    <Reference Include="System.Data.Services.Design" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
@@ -83,25 +79,27 @@
     <Compile Include="ConnectionHistoryWriter.cs" />
     <Compile Include="ConnectionHistoryReader.cs" />
     <Compile Include="ConnectionLogger.cs" />
+    <Compile Include="ConnectionModel.cs" />
+    <Compile Include="MultiDialog.xaml.cs">
+      <DependentUpon>MultiDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DiscoveryBinding.cs" />
     <Compile Include="Discovery.cs" />
     <Compile Include="DiscoveryCompiler.cs" />
     <Compile Include="DiscoveryReference.cs" />
     <Compile Include="DiscoveryWorker.cs" />
+    <Compile Include="ConnectionInfoAdapter.cs" />
+    <Compile Include="MultiDialogViewModel.cs" />
     <Compile Include="Proxy.cs" />
     <Compile Include="ProxyBuilder.cs" />
     <Compile Include="Schema.cs" />
     <Compile Include="SchemaBuilder.cs" />
-    <Compile Include="ConnectionModel.cs" />
     <Compile Include="SoapContextDriver.cs" />
-    <Compile Include="Dialog.xaml.cs">
-      <DependentUpon>Dialog.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WsdlExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Dialog.xaml">
+    <Page Include="MultiDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

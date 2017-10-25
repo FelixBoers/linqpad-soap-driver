@@ -11,8 +11,14 @@ using System.Windows;
 
 namespace SoapContextDriver
 {
-	public class Discovery
-	{
+    public interface IDiscovery
+    {
+        IEnumerable<ServiceDescription> GetServices();
+        DiscoveryClientDocumentCollection GetDocuments();
+    }
+
+    public class Discovery : IDiscovery
+    {
 	    private readonly string _uri;
 	    private readonly ICredentials _credentials;
 	    private DiscoveryClientDocumentCollection _documents;

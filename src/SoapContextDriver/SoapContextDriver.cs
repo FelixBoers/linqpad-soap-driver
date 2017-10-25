@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Text;
 using LINQPad.Extensibility.DataContext;
 
 namespace SoapContextDriver
@@ -14,19 +15,26 @@ namespace SoapContextDriver
 
 	    public override string GetConnectionDescription(IConnectionInfo connectionInfo)
 		{
-			var model = new ConnectionModel(connectionInfo);
-			var uri = new Uri(model.Uri);
-			var host = uri.Port == 80
-				? uri.Host
-				: string.Concat(uri.Host, ':', uri.Port);
-			return $"{model.BindingName} ({host})";
+			var adapter = new ConnectionInfoAdapter(connectionInfo);
+		    var sb = new StringBuilder();
+            foreach (var conn in adapter)
+		    {
+		        var uri = new Uri(conn.Url);
+		        var host = uri.Port == 80
+		            ? uri.Host
+		            : string.Concat(uri.Host, ':', uri.Port);
+		        if (sb.Length > 0)
+		            sb.Append(',');
+		        sb.Append($"{conn.BindingName} ({host})");
+            }
+		    return sb.ToString();
 		}
 
 		public override bool AreRepositoriesEquivalent (IConnectionInfo r1, IConnectionInfo r2)
 		{
-			var m1 = new ConnectionModel(r1);
-			var m2 = new ConnectionModel(r2);
-			return Equals(m1.Uri, m2.Uri) && Equals(m1.BindingName, m2.BindingName);
+			var m1 = new ConnectionInfoAdapter(r1);
+			var m2 = new ConnectionInfoAdapter(r2);
+		    return Equals(m1, m2);
 		}
 
 		public override IEnumerable<string> GetAssembliesToAdd (IConnectionInfo info)
@@ -43,27 +51,32 @@ namespace SoapContextDriver
 
 		public override bool ShowConnectionDialog(IConnectionInfo connectionInfo, bool isNewConnection)
 		{
-			var model = new ConnectionModel(connectionInfo,
-				new ConnectionHistoryReader(GetHistoryPath()).Read());
-			return new Dialog(model).ShowDialog() == true;
+		    var dialog = new MultiDialog(
+		        new MultiDialogViewModel(
+		            new ConnectionInfoAdapter(connectionInfo),
+		            new ConnectionHistoryReader(GetHistoryPath())
+		        )
+		    );
+            return dialog.ShowDialog() == true;
 		}
 
 		public override List<ExplorerItem> GetSchemaAndBuildAssembly(IConnectionInfo connectionInfo, AssemblyName assemblyToBuild, ref string nameSpace, ref string typeName)
 		{
-			var model = new ConnectionModel(connectionInfo);
-			var proxy = new ProxyBuilder(model.Uri)
-				.Build(assemblyToBuild, nameSpace);
+            throw new NotImplementedException();
+			//var model = new ConnectionInfoAdapter(connectionInfo););
+			//var proxy = new ProxyBuilder(model.Uri)
+			//	.Build(assemblyToBuild, nameSpace);
 
-			var schema = new SchemaBuilder()
-				.Build(proxy.Description, model.BindingName, proxy.Assembly);
+			//var schema = new SchemaBuilder()
+			//	.Build(proxy.Description, model.BindingName, proxy.Assembly);
 
-			nameSpace = proxy.Namespace;
-			typeName = schema.TypeName;
+			//nameSpace = proxy.Namespace;
+			//typeName = schema.TypeName;
 
-			new ConnectionHistoryWriter(GetHistoryPath())
-				.Append(model.Uri);
+			//new ConnectionHistoryWriter(GetHistoryPath())
+			//	.Append(model.Uri);
 
-			return schema.Entities;
+			//return schema.Entities;
 		}
 
 	    private string GetHistoryPath()
